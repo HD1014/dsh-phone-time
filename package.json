@@ -1,0 +1,37 @@
+{
+  "name": "dsh-ai-phone",
+  "title": "Dsh-Phone Time",
+  "version": "1.0.0",
+  "description": "Dsh-Phone Time：给 DSH 装一部 AI 电话。独立于工作台的闲聊通话层，按当前模型接通、按模型换头像与声线、边说边播报。",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "ai-phone",
+    "tts",
+    "voice-call"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    }
+  }
+}
